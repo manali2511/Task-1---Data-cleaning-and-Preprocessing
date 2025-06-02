@@ -1,0 +1,35 @@
+📝 Summary of Changes – Netflix Dataset Cleaning
+
+Dataset: netflix_titles.csv
+Total records before cleaning: 8,807
+Total records after cleaning: 8,807 (no exact duplicates found)
+
+🔄 Duplicates
+Checked for duplicate rows using .drop_duplicates()
+Result: No duplicate rows were removed
+
+⚠️ Missing Values
+Filled missing values in:
+director: → "Not Specified" (2,634 nulls)
+cast: → "Not Specified" (825 nulls)
+country: → "Unknown" (831 nulls)
+rating: → "Not Rated" (4 nulls)
+duration: → "Unknown" (3 nulls)
+
+Converted date_added to datetime format (10 invalid/missing values converted to NaT)
+
+🔤 Text Standardization
+Lowercased values in type (e.g., "Movie" → "movie")
+Capitalized country names (e.g., "united states" → "United States")
+
+🏷️ Column Renaming
+
+Renamed all column headers to lowercase with underscores for consistency
+(e.g., Date Added → date_added)
+
+📅 Data Type Fixes
+Converted release_year to integer type
+Converted date_added to datetime type
+
+✅ Output
+Cleaned dataset saved as: cleaned_netflix_titles.csv
